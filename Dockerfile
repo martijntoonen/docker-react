@@ -16,6 +16,9 @@ RUN npm run build
 # Start new stage
 FROM nginx
 
+# Open/Listen to port 80
+EXPOSE 80
+
 # Copy result from previous stage
 # (dest folder taken from nginx documenatation)
 COPY --from=builder /app/build /usr/share/nginx/html
